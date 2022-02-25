@@ -1,4 +1,4 @@
-package com.dev.minhasfinancas.com.dev.minhasfinancas.service;
+package com.dev.minhasfinancas.service;
 
 import com.dev.minhasfinancas.exceptions.ErroAutenticacaoException;
 import com.dev.minhasfinancas.exceptions.RegraNegocioException;

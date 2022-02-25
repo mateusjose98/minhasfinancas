@@ -1,11 +1,10 @@
-package com.dev.minhasfinancas.com.dev.minhasfinancas.model.repository;
+package com.dev.minhasfinancas.model.repository;
 
 import com.dev.minhasfinancas.model.entity.Usuario;
 import com.dev.minhasfinancas.model.repository.UsuarioRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
