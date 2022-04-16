@@ -8,6 +8,7 @@ import com.dev.minhasfinancas.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.Optional;
 
@@ -22,10 +23,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario autenticar(String email, String senha) {
+        if(!StringUtils.hasLength(senha)) throw new ErroAutenticacaoException("Senha vazia!");
         Usuario usuario = repository
                             .findByEmail(email)
                             .orElseThrow( () -> new ErroAutenticacaoException("Usuário não Existe!"));
         boolean senhasBatem = usuario.getSenha().equals(senha);
+
         if(!senhasBatem) throw new ErroAutenticacaoException("Senha Inválida");
         return usuario;
     }
